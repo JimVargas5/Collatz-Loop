@@ -10,6 +10,9 @@ def IsInteger(num):
 
 def Loop(n, YorN):
     steps = 0
+    start = str(n)
+    tipper = 0
+
     if not IsInteger(n):
         print("You didn't enter a number!")
         check()
@@ -17,6 +20,8 @@ def Loop(n, YorN):
         n = int(n)
         if n > 1:
             while n > 1:
+                if n > tipper:
+                    tipper = n
                 if YorN:
                     print("Step", str(steps)+":", n)
                 if n % 2 == 0:
@@ -25,7 +30,11 @@ def Loop(n, YorN):
                 else:
                     steps +=1
                     n = (3*n) + 1
-            print("It took", steps, "step(s) for the loop to terminate.")
+            print(
+                "It took", steps, "step(s) for the loop, starting at", 
+                start+",", "to terminate. The loop climbed all the way to", tipper,
+                "during the loop."
+            )
         else:
             print("You need to enter a number greater than 1!")
             check()
@@ -63,7 +72,6 @@ def main():
     else:
         Psteps = False
 
-    
     Loop(n, Psteps)
 
 
