@@ -1,4 +1,5 @@
 #My little take on demonstrating the Collatz conjecture
+from Check import check
 
 def IsInteger(num):
     try:
@@ -38,28 +39,7 @@ def Loop(n, YorN):
         else:
             print("You need to enter a number greater than 1!")
             check()
-
-
-def check():
-    print("Do you want to continue?")
-    thing = input("Y or N?"+'\n'+">>> ")
-    if (thing == "Y") or (thing == "y"):
-        main()
-    elif (thing == "N") or (thing == "n"):
-        print("Quitting...")
-        exit()
-    elif len(thing) == 0:
-        print("You didn't enter anything.")
-        print("Quitting...")
-        exit()
-    elif len(thing) > 1:
-        print("The program needs a one letter anser.", '\n')
-        check()
-    else:
-        print("You entered something invalid.")
-        print("Quitting...")
-    exit()
-
+            
 
 def main():
     n = input("Enter an integer greater than 1"+'\n'+">>> ")
